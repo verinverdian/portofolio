@@ -235,7 +235,7 @@ export default function Portfolio() {
         </section>
 
         {/* Career Section */}
-        <section id="career" className="mt-20 w-full max-w-4xl text-left space-y-6 md:text-base text-sm">
+        <section id="career" className="mt-20 w-full max-w-4xl text-left space-y-6 text-base">
           <h2 className="text-2xl font-bold mb-6">Career</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-8">
             My professional journey and experiences in the tech industry.
@@ -244,11 +244,11 @@ export default function Portfolio() {
           <ul className="space-y-6 text-gray-700 dark:text-gray-300">
             {/* Career Break */}
             <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
-              <div className="flex items-center justify-between">
-                <h3 className="font-semibold md:text-lg sm:text-xs">Career Break / Professional Development</h3>
-                <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
+              <div className="">
+                <h3 className="font-semibold md:text-lg">Career Break/Professional Development                 
+                <span className="ml-1 text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
                   2024
-                </span>
+                </span></h3>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
                 Pursued a professional teaching certification through a scholarship program from Kemendikbud to enhance my educational and professional skills.
@@ -257,11 +257,11 @@ export default function Portfolio() {
 
             {/* Tees.co.id */}
             <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
-              <div className="flex items-center justify-between">
-                <h3 className="font-semibold text-lg">Frontend Engineer at Tees.co.id</h3>
-                <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
-                  2019–2023
-                </span>
+              <div className="">
+                <h3 className="font-semibold md:text-lg">Frontend Engineer at Tees.co.id
+                  <span className="ml-1 text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
+                    2019–2023
+                  </span></h3>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
                 Develop and maintain website platform, create new features, redesign interface, build reusable code and libraries for future use, follow SEO best practices, fix bugs and test for usability.
@@ -270,11 +270,11 @@ export default function Portfolio() {
 
             {/* OfficeBee.co */}
             <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
-              <div className="flex items-center justify-between">
-                <h3 className="font-semibold text-lg">Frontend Engineer at OfficeBee</h3>
-                <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
-                  2022–2023
-                </span>
+              <div className="">
+                <h3 className="font-semibold md:text-lg">Frontend Engineer at OfficeBee
+                  <span className="ml-1 text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
+                    2022–2023
+                  </span></h3>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
                 Collaborate with teams to develop new user-facing features, write reusable code and libraries, ensure the technical feasibility of UI/UX designs, enhance application for maximum speed and scalability, validate input before submitting to back end, fix bugs and test for usability.
@@ -283,11 +283,12 @@ export default function Portfolio() {
 
             {/* Krafthaus.co.id */}
             <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
-              <div className="flex items-center justify-between">
-                <h3 className="font-semibold text-lg">Internship at Krafthaus.co.id</h3>
-                <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
-                  2016
-                </span>
+              <div className="">
+                <h3 className="font-semibold md:text-lg">Internship at Krafthaus.co.id
+                  <span className="ml-1 text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
+                    2016
+                  </span>
+                </h3>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
                 Assist the company with tasks set out by various teams, such as managing the official website, writing contents for the blog or website, follow-up and improvement of SEO.
