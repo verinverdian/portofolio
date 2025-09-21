@@ -235,7 +235,7 @@ export default function Portfolio() {
         </section>
 
         {/* Career Section */}
-        <section id="career" className="mt-20 w-full max-w-4xl text-left space-y-6 text-base">
+        <section id="career" className="mt-20 w-full max-w-4xl text-left space-y-6 md:text-base text-sm">
           <h2 className="text-2xl font-bold mb-6">Career</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-8">
             My professional journey and experiences in the tech industry.
