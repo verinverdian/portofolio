@@ -14,6 +14,7 @@ import Link from "next/link";
 export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(false);
   const [activeSection, setActiveSection] = useState("projects");
+  const [menuOpen, setMenuOpen] = useState(false);
   const year = new Date().getFullYear();
 
   useEffect(() => {
@@ -47,31 +48,52 @@ export default function Portfolio() {
       </div>
 
       {/* Navbar */}
-      <header className="w-full max-w-6xl flex justify-center relative z-10">
-        <nav className="flex items-center gap-6 bg-white dark:bg-gray-800 shadow px-6 py-3 rounded-full border border-gray-200 dark:border-gray-700">
-          <div className="font-bold text-xl pr-4 border-r border-gray-200 dark:border-gray-700">𝓥</div>
+      <header className="w-full max-w-6xl flex justify-between md:justify-center relative z-50">
+        <nav className="flex justify-between md:justify-center items-center gap-6 bg-white dark:bg-gray-800 shadow px-6 py-3 rounded-full border border-gray-200 dark:border-gray-700">
+          <div className="absolute left-4 md:static font-bold text-xl">𝓥</div>
 
-          {menuItems.map((item) => (
-            <Link
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={() => setActiveSection(item.id)}
-              className={`px-4 py-2 rounded-full transition ${activeSection === item.id
-                ? "bg-black text-white dark:bg-white dark:text-black shadow-md"
-                : "hover:text-blue-600"
-                }`}
-            >
-              {item.label}
-            </Link>
-          ))}
-
-          {/* Dark Mode Toggle */}
+          {/* Hamburger toggle (mobile only) */}
           <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="ml-2 p-2 rounded-full border hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+            className="absolute right-4 md:hidden p-2"
+            onClick={() => setMenuOpen(!menuOpen)}
           >
-            {darkMode ? <Sun size={18} className="text-yellow-400" /> : <Moon size={18} className="text-gray-700" />}
+            ☰
           </button>
+          
+          {/* Nav links */}
+          <div
+            className={`${menuOpen ? "flex" : "hidden"
+              } md:flex flex-col md:flex-row items-center gap-4 absolute md:static top-16 left-4 right-4 bg-white dark:bg-gray-800 shadow-md md:shadow-none px-6 py-4 md:p-0 rounded-2xl md:rounded-full`}
+          >
+            {menuItems.map((item) => (
+              <Link
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={() => {
+                  setActiveSection(item.id);
+                  setMenuOpen(false); // close menu after click
+                }}
+                className={`px-4 py-2 rounded-full transition ${activeSection === item.id
+                    ? "bg-black text-white dark:bg-white dark:text-black shadow-md"
+                    : "hover:text-blue-600"
+                  }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+
+            {/* Dark Mode Toggle */}
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className="ml-0 md:ml-2 p-2 rounded-full border hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+            >
+              {darkMode ? (
+                <Sun size={18} className="text-yellow-400" />
+              ) : (
+                <Moon size={18} className="text-gray-700" />
+              )}
+            </button>
+          </div>
         </nav>
       </header>
 
@@ -92,7 +114,7 @@ export default function Portfolio() {
             />
           </div>
 
-          <h1 className="typing text-4xl font-bold mb-4">Hi, I’m Verin 👋</h1>
+          <h1 className="typing md:text-4xl font-bold mb-4 sm:text-2xl">Hi, I’m Verin 👋</h1>
           <p className="text-gray-600 dark:text-gray-300 max-w-xl">
             With 3 years of experience as a Frontend Developer, I help product companies
             build responsive, performant, and engaging digital experiences using modern web technologies.
@@ -102,7 +124,7 @@ export default function Portfolio() {
         {/* Tools & Technologies */}
         <section className="mt-12 text-center w-full">
           <h2 className="uppercase tracking-wider text-gray-700 dark:text-gray-200 mb-8 font-semibold">Tools & Technologies</h2>
-          <div className="flex gap-10 text-4xl justify-center flex-wrap items-center">
+          <div className="flex md:gap-10 gap-2 md:text-4xl text-xl justify-center flex-wrap items-center">
             <FaReact className="text-blue-500" />
             <SiTypescript className="text-blue-700" />
             <FaJs className="text-yellow-500" />
@@ -210,7 +232,7 @@ export default function Portfolio() {
         </section>
 
         {/* Career Section */}
-        <section id="career" className="mt-20 w-full max-w-4xl text-left">
+        <section id="career" className="mt-20 w-full max-w-4xl text-left space-y-6 sm:text-sm">
           <h2 className="text-2xl font-bold mb-6">Career</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-8">
             My professional journey and experiences in the tech industry.
@@ -220,9 +242,9 @@ export default function Portfolio() {
             {/* Career Break */}
             <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-between">
-                <h3 className="font-semibold text-lg">Career Break / Professional Development</h3>
+                <h3 className="font-semibold md:text-lg sm:text-xs">Career Break / Professional Development</h3>
                 <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
-                  2023 – 2024
+                  2024
                 </span>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
@@ -233,7 +255,7 @@ export default function Portfolio() {
             {/* Tees.co.id */}
             <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-between">
-                <h3 className="font-semibold text-lg">Frontend Engineer at <em>Tees.co.id</em></h3>
+                <h3 className="font-semibold text-lg">Frontend Engineer at Tees.co.id</h3>
                 <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
                   2019 – 2023
                 </span>
@@ -246,7 +268,7 @@ export default function Portfolio() {
             {/* OfficeBee.co */}
             <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-between">
-                <h3 className="font-semibold text-lg">Frontend Engineer at <em>OfficeBee.co</em></h3>
+                <h3 className="font-semibold text-lg">Frontend Engineer at OfficeBee.co</h3>
                 <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
                   2022 – 2023
                 </span>
@@ -259,7 +281,7 @@ export default function Portfolio() {
             {/* Krafthaus.co.id */}
             <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-between">
-                <h3 className="font-semibold text-lg">Internship at <em>Krafthaus.co.id</em></h3>
+                <h3 className="font-semibold text-lg">Internship at Krafthaus.co.id</h3>
                 <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
                   2016
                 </span>
@@ -306,7 +328,7 @@ export default function Portfolio() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="mt-20 w-full max-w-4xl text-left mb-20">
+        <section id="contact" className="mt-20 w-full max-w-4xl mb-20 text-center">
           <h2 className="text-2xl font-bold mb-4">Contact Me</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
             Let’s work together! Reach out for collaborations or just a friendly chat.
@@ -321,7 +343,7 @@ export default function Portfolio() {
           </Link>
 
           {/* Ikon Sosial */}
-          <div className="flex gap-6 text-3xl mt-1">
+          <div className="flex justify-center gap-6 text-3xl mt-1">
             <Link
               href="mailto:verdiandesya@gmail.com"
               target="_blank"
@@ -344,7 +366,7 @@ export default function Portfolio() {
         </section>
       </main>
       <footer className="w-full pt-6 border-t bg-white dark:bg-gray-900 dark:border-gray-700 text-center">
-        <p className="text-gray-600 dark:text-gray-400 flex items-center justify-center gap-2">
+        <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-400 flex items-center justify-center gap-2 flex-wrap">
           © {year} 𝓥 • Made with
           <Heart className="w-4 h-4 text-red-500 fill-red-500" />
           &
@@ -352,6 +374,7 @@ export default function Portfolio() {
           • fueled by curiosity
         </p>
       </footer>
+
     </div>
   );
 }
