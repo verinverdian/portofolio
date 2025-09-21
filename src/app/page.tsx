@@ -7,7 +7,7 @@ import {
 import {
   SiTailwindcss, SiTypescript, SiNextdotjs, SiSlack, SiTrello
 } from 'react-icons/si';
-import { Moon, Sun, Heart, Coffee, CupSoda } from "lucide-react";
+import { Moon, Sun, Heart, Coffee, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -49,7 +49,10 @@ export default function Portfolio() {
 
       {/* Navbar */}
       <header className="w-full max-w-6xl flex justify-between md:justify-center relative z-50">
-        <nav className="flex justify-between md:justify-center items-center gap-6 bg-white dark:bg-gray-800 shadow px-6 py-3 rounded-full border border-gray-200 dark:border-gray-700">
+        <nav className="flex justify-between md:justify-center items-center gap-6 
+  bg-white dark:bg-gray-800 px-6 py-3 rounded-full 
+  border-0 md:border md:border-gray-200 dark:md:border-gray-700 md:shadow-md md:shadow">
+
           <div className="absolute left-4 md:static font-bold text-xl">𝓥</div>
 
           {/* Hamburger toggle (mobile only) */}
@@ -57,9 +60,9 @@ export default function Portfolio() {
             className="absolute right-4 md:hidden p-2"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            ☰
+            <Menu size={18} />
           </button>
-          
+
           {/* Nav links */}
           <div
             className={`${menuOpen ? "flex" : "hidden"
@@ -74,8 +77,8 @@ export default function Portfolio() {
                   setMenuOpen(false); // close menu after click
                 }}
                 className={`px-4 py-2 rounded-full transition ${activeSection === item.id
-                    ? "bg-black text-white dark:bg-white dark:text-black shadow-md"
-                    : "hover:text-blue-600"
+                  ? "bg-black text-white dark:bg-white dark:text-black shadow-md"
+                  : "hover:text-blue-600"
                   }`}
               >
                 {item.label}
@@ -114,7 +117,7 @@ export default function Portfolio() {
             />
           </div>
 
-          <h1 className="typing md:text-4xl font-bold mb-4 sm:text-2xl">Hi, I’m Verin 👋</h1>
+          <h1 className="typing md:text-4xl font-bold mb-4 text-xl">Hi, I’m Verin 👋</h1>
           <p className="text-gray-600 dark:text-gray-300 max-w-xl">
             With 3 years of experience as a Frontend Developer, I help product companies
             build responsive, performant, and engaging digital experiences using modern web technologies.
@@ -232,7 +235,7 @@ export default function Portfolio() {
         </section>
 
         {/* Career Section */}
-        <section id="career" className="mt-20 w-full max-w-4xl text-left space-y-6 sm:text-sm">
+        <section id="career" className="mt-20 w-full max-w-4xl text-left space-y-6 text-base">
           <h2 className="text-2xl font-bold mb-6">Career</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-8">
             My professional journey and experiences in the tech industry.
@@ -257,7 +260,7 @@ export default function Portfolio() {
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold text-lg">Frontend Engineer at Tees.co.id</h3>
                 <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
-                  2019 – 2023
+                  2019–2023
                 </span>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
@@ -268,9 +271,9 @@ export default function Portfolio() {
             {/* OfficeBee.co */}
             <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-between">
-                <h3 className="font-semibold text-lg">Frontend Engineer at OfficeBee.co</h3>
+                <h3 className="font-semibold text-lg">Frontend Engineer at OfficeBee</h3>
                 <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
-                  2022 – 2023
+                  2022–2023
                 </span>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
@@ -365,6 +368,7 @@ export default function Portfolio() {
           </div>
         </section>
       </main>
+
       <footer className="w-full pt-6 border-t bg-white dark:bg-gray-900 dark:border-gray-700 text-center">
         <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-400 flex items-center justify-center gap-2 flex-wrap">
           © {year} 𝓥 • Made with
@@ -374,7 +378,6 @@ export default function Portfolio() {
           • fueled by curiosity
         </p>
       </footer>
-
     </div>
   );
 }
