@@ -172,7 +172,7 @@ export default function Portfolio() {
                   </span>
                 </div>
                 <h3 className="text-white text-xl font-semibold mb-2">Tees.co.id</h3>
-                <p className="text-white dark:text-gray-300 text-sm mb-1"> Built and maintained frontend features for the custom merchandise platform using modern web technologies. (Tech: AngulasJS, SCSS) </p>
+                <p className="text-white dark:text-gray-300 text-sm mb-1"> Built and maintained frontend features for the custom merchandise platform using modern web technologies. (Tech Stack: AngularJS , SCSS, REST API) </p>
                 <span className="inline-block text-sm bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition">
                   View Website
                 </span>
@@ -200,7 +200,7 @@ export default function Portfolio() {
                   </span>
                 </div>
                 <h3 className="text-white text-xl font-semibold mb-2">OffieceBee</h3>
-                <p className="text-white dark:text-gray-300 text-sm mb-1"> Developed responsive and performant UI for office management solutions. (Tech: AngulasJS, SCSS)</p>
+                <p className="text-white dark:text-gray-300 text-sm mb-1"> Developed responsive and performant UI for office management solutions. (Tech Stack: AngularJS , SCSS, REST API)</p>
                 <span className="inline-block text-sm bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition">
                   View Website
                 </span>
