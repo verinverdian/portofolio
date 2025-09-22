@@ -5,7 +5,7 @@ import {
   FaReact, FaJs, FaNodeJs, FaGitAlt, FaHtml5, FaCss3Alt, FaLaravel, FaLinkedin, FaEnvelope,
 } from 'react-icons/fa';
 import {
-  SiTailwindcss, SiTypescript, SiNextdotjs, SiSlack, SiTrello
+  SiTailwindcss, SiTypescript, SiNextdotjs, SiSlack, SiTrello, SiFigma
 } from 'react-icons/si';
 import { Moon, Sun, Heart, Coffee, Menu } from "lucide-react";
 import Image from "next/image";
@@ -139,6 +139,7 @@ export default function Portfolio() {
             <FaLaravel className="text-red-500" />
             <FaGitAlt className="text-orange-600" />
             <SiSlack className="text-pink-500" />
+            <SiFigma className="text-purple-500" /> 
             <SiTrello className="text-blue-400" />
           </div>
         </section>
