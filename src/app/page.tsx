@@ -139,7 +139,7 @@ export default function Portfolio() {
             <FaLaravel className="text-red-500" />
             <FaGitAlt className="text-orange-600" />
             <SiSlack className="text-pink-500" />
-            <SiFigma className="text-purple-500" /> 
+            <SiFigma className="text-purple-500" />
             <SiTrello className="text-blue-400" />
           </div>
         </section>
@@ -246,26 +246,13 @@ export default function Portfolio() {
             {/* Career Break */}
             <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
               <div className="">
-                <h3 className="font-semibold md:text-lg">Career Break/Professional Development                 
-                <span className="ml-1 text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
-                  2024
-                </span></h3>
-              </div>
-              <p className="mt-1 text-gray-600 dark:text-gray-400">
-                Pursued a professional teaching certification through a scholarship program from Kemendikbud to enhance my educational and professional skills.
-              </p>
-            </li>
-
-            {/* Tees.co.id */}
-            <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
-              <div className="">
-                <h3 className="font-semibold md:text-lg">Frontend Engineer at Tees.co.id
+                <h3 className="font-semibold md:text-lg">Career Break/Professional Development
                   <span className="ml-1 text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
-                    2019–2023
+                    2024
                   </span></h3>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
-                Develop and maintain website platform, create new features, redesign interface, build reusable code and libraries for future use, follow SEO best practices, fix bugs and test for usability.
+                Pursued a professional teaching certification through a scholarship program from Kemendikbud to enhance my educational and professional skills.
               </p>
             </li>
 
@@ -279,6 +266,19 @@ export default function Portfolio() {
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
                 Collaborate with teams to develop new user-facing features, write reusable code and libraries, ensure the technical feasibility of UI/UX designs, enhance application for maximum speed and scalability, validate input before submitting to back end, fix bugs and test for usability.
+              </p>
+            </li>
+
+            {/* Tees.co.id */}
+            <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
+              <div className="">
+                <h3 className="font-semibold md:text-lg">Frontend Engineer at Tees.co.id
+                  <span className="ml-1 text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
+                    2019–2023
+                  </span></h3>
+              </div>
+              <p className="mt-1 text-gray-600 dark:text-gray-400">
+                Develop and maintain website platform, create new features, redesign interface, build reusable code and libraries for future use, follow SEO best practices, fix bugs and test for usability.
               </p>
             </li>
 
