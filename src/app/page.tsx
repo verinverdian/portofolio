@@ -281,8 +281,25 @@ export default function Portfolio() {
                   </span></h3>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
-                Developed and maintained company web platforms to support digital initiatives, translated business and user requirements into functional frontend features, enhanced UI/UX to improve usability and overall customer experience across digital platforms, performed performance optimization to ensure faster and smoother interactions, and worked closely with cross-functional teams to deliver high-quality web applications.
-          </p>
+              <ul className="list-disc pl-5 space-y-2">
+  <li>
+    Developed and maintained company web platforms to support digital initiatives.
+  </li>
+  <li>
+    Translated business and user requirements into functional frontend features.
+  </li>
+  <li>
+    Enhanced UI/UX to improve usability and overall customer experience across digital platforms.
+  </li>
+  <li>
+    Performed performance optimization to ensure faster and smoother interactions.
+  </li>
+  <li>
+    Collaborated with cross-functional teams to deliver high-quality web applications.
+  </li>
+</ul>
+  
+              </p>
             </li>
 
             {/* Tees.co.id */}
@@ -294,7 +311,24 @@ export default function Portfolio() {
                   </span></h3>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
-                Developed and maintained company web platforms to support digital initiatives, translated business and user requirements into functional frontend features, enhanced UI/UX to improve usability and overall customer experience across digital platforms, performed performance optimization to ensure faster and smoother interactions, and worked closely with cross-functional teams to deliver high-quality web applications.
+                <ul className="list-disc pl-5 space-y-2">
+  <li>
+    Developed and maintained company web platforms to support digital initiatives.
+  </li>
+  <li>
+    Translated business and user requirements into functional frontend features.
+  </li>
+  <li>
+    Enhanced UI/UX to improve usability and overall customer experience across digital platforms.
+  </li>
+  <li>
+    Performed performance optimization to ensure faster and smoother interactions.
+  </li>
+  <li>
+    Collaborated with cross-functional teams to deliver high-quality web applications.
+  </li>
+</ul>
+
               </p>
             </li>
 
@@ -308,7 +342,18 @@ export default function Portfolio() {
                 </h3>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
-                Assisted in developing responsive websites using modern frontend technologies, supported senior developers in implementing features and improving interfaces, and conducted testing and debugging to maintain website reliability.
+              <ul className="list-disc pl-5 space-y-2">
+  <li>
+    Assisted in developing responsive websites using modern frontend technologies.
+  </li>
+  <li>
+    Supported senior developers in implementing features and improving interfaces.
+  </li>
+  <li>
+    Conducted testing and debugging to maintain website reliability.
+  </li>
+</ul>
+  
               </p>
             </li>
           </ul>
