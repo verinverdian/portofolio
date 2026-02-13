@@ -246,39 +246,38 @@ export default function Portfolio() {
             {/* Career Break */}
             <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
               <div className="">
-                <h3 className="font-semibold md:text-lg">Career Break/Professional Development
+                <h3 className="font-semibold md:text-lg">Self-Employed (Freelance Frontend Developer / Web Developer)
                   <span className="ml-1 text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
-                    2024
+                    2024-Present
                   </span></h3>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
-                Pursued a professional teaching certification through a scholarship program from Kemendikbud to enhance my educational and professional skills.
-              </p>
+                Designed and developed responsive landing pages aligned with client marketing goals, collaborated directly with clients to understand requirements and deliver effective web solutions, improved website performance, SEO, and accessibility to enhance user experience, managed projects from planning to deployment while ensuring timely delivery, and applied modern design and development practices to create reliable digital products. </p>
             </li>
 
             {/* OfficeBee.co */}
             <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
               <div className="">
-                <h3 className="font-semibold md:text-lg">Frontend Engineer at OfficeBee
+                <h3 className="font-semibold md:text-lg">Frontend Engineer at OfficeBee (PT Tees Pratama Indonesia)
                   <span className="ml-1 text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
                     2022–2023
                   </span></h3>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
-                Collaborate with teams to develop new user-facing features, write reusable code and libraries, ensure the technical feasibility of UI/UX designs, enhance application for maximum speed and scalability, validate input before submitting to back end, fix bugs and test for usability.
-              </p>
+                Developed and maintained company web platforms to support digital initiatives, translated business and user requirements into functional frontend features, enhanced UI/UX to improve usability and overall customer experience across digital platforms, performed performance optimization to ensure faster and smoother interactions, and worked closely with cross-functional teams to deliver high-quality web applications.
+          </p>
             </li>
 
             {/* Tees.co.id */}
             <li className="pb-4 border-b border-gray-200 dark:border-gray-700">
               <div className="">
-                <h3 className="font-semibold md:text-lg">Frontend Engineer at Tees.co.id
+                <h3 className="font-semibold md:text-lg">Frontend Engineer at Tees.co.id (PT Tees Pratama Indonesia)
                   <span className="ml-1 text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
                     2019–2023
                   </span></h3>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
-                Develop and maintain website platform, create new features, redesign interface, build reusable code and libraries for future use, follow SEO best practices, fix bugs and test for usability.
+                Developed and maintained company web platforms to support digital initiatives, translated business and user requirements into functional frontend features, enhanced UI/UX to improve usability and overall customer experience across digital platforms, performed performance optimization to ensure faster and smoother interactions, and worked closely with cross-functional teams to deliver high-quality web applications.
               </p>
             </li>
 
@@ -292,7 +291,7 @@ export default function Portfolio() {
                 </h3>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
-                Assist the company with tasks set out by various teams, such as managing the official website, writing contents for the blog or website, follow-up and improvement of SEO.
+                Assisted in developing responsive websites using modern frontend technologies, supported senior developers in implementing features and improving interfaces, and conducted testing and debugging to maintain website reliability.
               </p>
             </li>
           </ul>
