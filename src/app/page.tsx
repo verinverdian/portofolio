@@ -252,7 +252,24 @@ export default function Portfolio() {
                   </span></h3>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
-                Designed and developed responsive landing pages aligned with client marketing goals, collaborated directly with clients to understand requirements and deliver effective web solutions, improved website performance, SEO, and accessibility to enhance user experience, managed projects from planning to deployment while ensuring timely delivery, and applied modern design and development practices to create reliable digital products. </p>
+                <ul className="list-disc pl-5 space-y-2">
+  <li>
+    Designed and developed responsive landing pages aligned with client marketing goals.
+  </li>
+  <li>
+    Collaborated directly with clients to understand requirements and deliver effective web solutions.
+  </li>
+  <li>
+    Improved website performance, SEO, and accessibility to enhance user experience.
+  </li>
+  <li>
+    Managed projects from planning to deployment while ensuring timely delivery.
+  </li>
+  <li>
+    Applied modern design and development practices to create reliable digital products.
+  </li>
+</ul>
+              </p>
             </li>
 
             {/* OfficeBee.co */}
