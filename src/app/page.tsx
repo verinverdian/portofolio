@@ -484,6 +484,7 @@ text-xs md:text-sm">
 
         <span>Fueled by curiosity</span>
 
+
       </footer>
 
     </div >
