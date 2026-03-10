@@ -66,11 +66,12 @@ export default function UltraPremiumPortfolio() {
         "Owned product direction and engineered scalable UI systems.",
     },
   ];
-
-  const [active, setActive] = useState(null)
+  
+  const [active, setActive] = useState<string | null>(null)
+  //const [active, setActive] = useState(null)
 
   useEffect(() => {
-    const sections = ["work", "about", "contact"]
+    const sections = ["work", "projects", "about", "contact"]
 
     const handleScroll = () => {
       let found = false
@@ -160,6 +161,7 @@ export default function UltraPremiumPortfolio() {
       >
         <div className="backdrop-blur-2xl bg-white/60 border border-white/40 shadow-xl rounded-full px-8 py-3 flex gap-8 text-sm font-medium">
           {navItem("work", "Work")}
+          {navItem("projects", "Projects")}
           {navItem("about", "About")}
           {navItem("contact", "Contact")}
         </div>
@@ -327,7 +329,7 @@ export default function UltraPremiumPortfolio() {
       </section>
 
       {/* SELECTED WORK */}
-      <section id="work" className="max-w-6xl mx-auto px-6 py-28">
+      <section id="projects" className="max-w-6xl mx-auto px-6 py-28">
         <h2 className="text-5xl font-semibold mb-20 tracking-tight">Projects</h2>
 
         <div className="space-y-14">
