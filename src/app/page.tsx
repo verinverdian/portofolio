@@ -9,7 +9,23 @@ import { Button } from "@/components/ui/button";
 import { Mail, Github, Linkedin, ArrowUpRight, X, Heart, Coffee, ChevronDown } from "lucide-react";
 
 export default function UltraPremiumPortfolio() {
-  const [activeCase, setActiveCase] = useState<any | null>(null)
+  type CaseStudy = {
+    title: string
+    subtitle: string
+    image: string
+    tag: string
+    metric: string
+    problem: string
+    solution: string
+    impact: string
+    role: string
+  }
+  
+  type Section = "work" | "projects" | "about" | "contact"
+
+  const [activeCase, setActiveCase] = useState<CaseStudy | null>(null)
+
+  const [active, setActive] = useState<Section | null>(null)
 
   const prevWorks = [
     {
@@ -67,12 +83,9 @@ export default function UltraPremiumPortfolio() {
     },
   ];
 
-  const [active, setActive] = useState<string | null>(null)
-  //const [active, setActive] = useState(null)
-
   useEffect(() => {
-    const sections = ["work", "projects", "about", "contact"]
-
+    const sections: Section[] = ["work", "projects", "about", "contact"]
+    
     const handleScroll = () => {
       let found = false
 
@@ -99,15 +112,16 @@ export default function UltraPremiumPortfolio() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const navItem = (id: string, label: string) => (
+  const navItem = (id: Section, label: string) => (
     <button
       onClick={() =>
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
       }
-      className={`transition-colors duration-300 ${active === id
-        ? "text-pink-600"
-        : "text-slate-700 hover:text-pink-500"
-        }`}
+      className={`transition-colors duration-300 ${
+        active === id
+          ? "text-pink-600"
+          : "text-slate-700 hover:text-pink-500"
+      }`}
     >
       {label}
     </button>
@@ -116,34 +130,29 @@ export default function UltraPremiumPortfolio() {
   const fullText = "I Build in Code.";
 
   const [typedText, setTypedText] = useState("");
-  //const [isTyping, setIsTyping] = useState(false);
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    if (!isInView) return;
-
-    setTypedText("");
-    //setIsTyping(true);
-
-    let index = 0;
-
+    if (!isInView) return
+  
+    setTypedText("")
+  
+    let index = 0
+  
     const startDelay = setTimeout(() => {
       const typingInterval = setInterval(() => {
-        setTypedText(fullText.slice(0, index + 1));
-        index++;
-
+        setTypedText(fullText.slice(0, index + 1))
+        index++
+  
         if (index === fullText.length) {
-          clearInterval(typingInterval);
-          // setIsTyping(false);
+          clearInterval(typingInterval)
         }
-      }, 65);
-
-      return () => clearInterval(typingInterval);
-    }, 600);
-
-    return () => clearTimeout(startDelay);
-
-  }, [isInView]);
+      }, 65)
+    }, 600)
+  
+    return () => clearTimeout(startDelay)
+  
+  }, [isInView])
 
   return (
     <div className="min-h-screen bg-[#fffafd] text-slate-900 overflow-x-hidden selection:bg-pink-200">
