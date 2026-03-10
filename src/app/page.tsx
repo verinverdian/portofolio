@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, Github, Linkedin, ArrowUpRight, X, Heart, Coffee, ChevronDown } from "lucide-react";
 
 export default function UltraPremiumPortfolio() {
-  const [activeCase, setActiveCase] = useState(null);
+  const [activeCase, setActiveCase] = useState<any | null>(null)
 
   const prevWorks = [
     {
@@ -66,7 +66,7 @@ export default function UltraPremiumPortfolio() {
         "Owned product direction and engineered scalable UI systems.",
     },
   ];
-  
+
   const [active, setActive] = useState<string | null>(null)
   //const [active, setActive] = useState(null)
 
@@ -99,7 +99,7 @@ export default function UltraPremiumPortfolio() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const navItem = (id, label) => (
+  const navItem = (id: string, label: string) => (
     <button
       onClick={() =>
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
