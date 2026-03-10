@@ -116,14 +116,14 @@ export default function UltraPremiumPortfolio() {
   const fullText = "I Build in Code.";
 
   const [typedText, setTypedText] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
+  //const [isTyping, setIsTyping] = useState(false);
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
     if (!isInView) return;
 
     setTypedText("");
-    setIsTyping(true);
+    //setIsTyping(true);
 
     let index = 0;
 
@@ -134,7 +134,7 @@ export default function UltraPremiumPortfolio() {
 
         if (index === fullText.length) {
           clearInterval(typingInterval);
-          setIsTyping(false);
+          // setIsTyping(false);
         }
       }, 65);
 
