@@ -20,7 +20,7 @@ export default function UltraPremiumPortfolio() {
     impact: string
     role: string
   }
-  
+
   type Section = "work" | "projects" | "about" | "contact"
 
   const [activeCase, setActiveCase] = useState<CaseStudy | null>(null)
@@ -85,7 +85,7 @@ export default function UltraPremiumPortfolio() {
 
   useEffect(() => {
     const sections: Section[] = ["work", "projects", "about", "contact"]
-    
+
     const handleScroll = () => {
       let found = false
 
@@ -117,11 +117,10 @@ export default function UltraPremiumPortfolio() {
       onClick={() =>
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
       }
-      className={`transition-colors duration-300 ${
-        active === id
-          ? "text-pink-600"
-          : "text-slate-700 hover:text-pink-500"
-      }`}
+      className={`transition-colors duration-300 ${active === id
+        ? "text-pink-600"
+        : "text-slate-700 hover:text-pink-500"
+        }`}
     >
       {label}
     </button>
@@ -134,24 +133,24 @@ export default function UltraPremiumPortfolio() {
 
   useEffect(() => {
     if (!isInView) return
-  
+
     setTypedText("")
-  
+
     let index = 0
-  
+
     const startDelay = setTimeout(() => {
       const typingInterval = setInterval(() => {
         setTypedText(fullText.slice(0, index + 1))
         index++
-  
+
         if (index === fullText.length) {
           clearInterval(typingInterval)
         }
       }, 65)
     }, 600)
-  
+
     return () => clearTimeout(startDelay)
-  
+
   }, [isInView])
 
   return (
@@ -168,7 +167,11 @@ export default function UltraPremiumPortfolio() {
         animate={{ y: 0 }}
         className="fixed top-6 left-0 right-0 flex justify-center z-50"
       >
-        <div className="backdrop-blur-2xl bg-white/60 border border-white/40 shadow-xl rounded-full px-8 py-3 flex gap-8 text-sm font-medium">
+        <div className="backdrop-blur-2xl bg-white/60 border border-white/40 shadow-xl rounded-full 
+px-4 md:px-8 py-2 md:py-3 
+flex gap-4 md:gap-8 
+text-xs md:text-sm font-medium
+overflow-x-auto whitespace-nowrap">
           {navItem("work", "Work")}
           {navItem("projects", "Projects")}
           {navItem("about", "About")}
@@ -177,8 +180,20 @@ export default function UltraPremiumPortfolio() {
       </motion.div>
 
       {/* HERO */}
-      <section id="hi" className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 relative">
-
+      <section
+        id="hi"
+        className="
+  min-h-screen
+  flex flex-col
+  items-center
+  justify-center
+  text-center
+  px-4 sm:px-6
+  pt-28 md:pt-24
+  relative
+  w-full
+  "
+      >
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -186,7 +201,7 @@ export default function UltraPremiumPortfolio() {
           onViewportEnter={() => setIsInView(true)}
           onViewportLeave={() => setIsInView(false)}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="max-w-5xl space-y-10"
+          className="w-full md:max-w-5xl space-y-8 md:space-y-10"
         >
 
           {/* STATUS */}
@@ -200,7 +215,7 @@ export default function UltraPremiumPortfolio() {
           </div>
 
           {/* HEADLINE */}
-          <h1 className="text-5xl md:text-7xl font-semibold leading-[1.1] tracking-tight text-slate-900">
+          <h1 className="text-4xl sm:text-4xl sm:text-5xl md:text-7xl font-semibold leading-[1.15] tracking-tight text-slate-900">
             I Think in{" "}
             <span className="relative inline-block">
               <span className="absolute inset-0 bg-pink-200/60 rounded-lg -rotate-1"></span>
@@ -224,7 +239,7 @@ export default function UltraPremiumPortfolio() {
           </p>
 
           {/* TRUST SIGNAL */}
-          <div className="flex flex-wrap justify-center gap-8 text-sm text-slate-500 font-medium pt-2">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-slate-500 font-medium pt-2">
             <span>Product Strategy → UI → Production</span>
             <span>Scalable Frontend Systems</span>
             <span>Performance & UX Focused</span>
@@ -259,8 +274,8 @@ export default function UltraPremiumPortfolio() {
       </section>
 
       {/* PREVIOUS WORK */}
-      <section id="work" className="max-w-6xl mx-auto px-6 py-28">
-        <h2 className="text-5xl font-semibold mb-20 tracking-tight">
+      <section id="work" className="max-w-6xl mx-auto px-6 py-20 md:py-28">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-10 md:mb-20 tracking-tight">
           Previous Work
         </h2>
 
@@ -275,10 +290,10 @@ export default function UltraPremiumPortfolio() {
               <motion.div whileHover={{ y: -10 }}>
                 <Card className="rounded-[40px] border-0 shadow-lg hover:shadow-2xl transition overflow-hidden bg-white/80 backdrop-blur h-full cursor-pointer">
 
-                  <CardContent className="p-12 flex flex-col gap-8">
+                  <CardContent className="p-6 md:p-12 flex flex-col gap-6 md:gap-8">
 
                     {/* IMAGE */}
-                    <div className="w-full h-56 rounded-3xl relative overflow-hidden">
+                    <div className="w-full h-44 md:h-56 rounded-3xl relative overflow-hidden">
                       <Image
                         src={work.image}
                         alt={work.title}
@@ -337,17 +352,17 @@ export default function UltraPremiumPortfolio() {
 
       </section>
 
-      {/* SELECTED WORK */}
-      <section id="projects" className="max-w-6xl mx-auto px-6 py-28">
-        <h2 className="text-5xl font-semibold mb-20 tracking-tight">Projects</h2>
+      {/* PROJECTS*/}
+      <section id="work" className="max-w-6xl mx-auto px-6 py-20 md:py-28">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-10 md:mb-20 tracking-tight">Projects</h2>
 
         <div className="space-y-14">
           {caseStudies.map((study) => (
             <motion.div key={study.title} whileHover={{ y: -10 }} onClick={() => setActiveCase(study)} className="cursor-pointer group">
               <Card className="rounded-[40px] border-0 shadow-lg hover:shadow-2xl transition overflow-hidden bg-white/80 backdrop-blur">
-                <CardContent className="p-12 flex flex-col md:flex-row gap-12 items-center">
+                <CardContent className="p-6 md:p-12 flex flex-col md:flex-row gap-6 md:gap-8">
                   {/* PREMIUM PREVIEW */}
-                  <div className="w-full md:w-1/2 h-64 rounded-3xl relative overflow-hidden">
+                  <div className="w-full md:w-1/2 h-44 md:h-56 rounded-3xl relative overflow-hidden">
                     {/* IMAGE */}
                     <Image
                       src={study.image}
@@ -391,10 +406,10 @@ bg-gradient-to-br from-pink-100/70 via-rose-100/60 to-pink-60/70" />
       </section >
 
       {/* ABOUT — AUTHORITY BUILDING */}
-      <section id="about" className="max-w-5xl mx-auto px-6 py-28" >
+      <section id="about" className="max-w-6xl mx-auto px-6 py-20 md:py-28">
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.7 }} className="grid md:grid-cols-2 gap-20 items-center">
           <div className="space-y-7">
-            <h2 className="text-5xl font-semibold tracking-tight">About</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-10 md:mb-20 tracking-tight">About</h2>
 
             <p className="text-lg text-slate-600 leading-relaxed">
               I specialize in turning complex ideas into structured digital products.
@@ -416,26 +431,38 @@ bg-gradient-to-br from-pink-100/70 via-rose-100/60 to-pink-60/70" />
           </div>
 
           {/* AUTHORITY CARD */}
-          <div className="relative">
-            <div className="absolute inset-0 bg-pink-200 blur-3xl opacity-30 rounded-full" />
-            <div className="relative bg-white rounded-[40px] p-12 shadow-2xl">
-              <h3 className="font-semibold mb-6 text-xl">Core Advantages</h3>
-              <ul className="space-y-4 text-slate-600 text-lg">
-                <li>⚡ Product-Oriented Thinking</li>
-                <li>📊 Structured Frontend Architecture</li>
-                <li>🎯 Intentional UX Decisions</li>
-                <li>🧠 Performance & Practicality Focus</li>
-                <li>🤝 Clear Technical Communication</li>
+          <div className="relative w-full">
+
+            {/* glow background */}
+            <div className="absolute inset-0 bg-pink-200 blur-2xl md:blur-3xl opacity-30 rounded-full" />
+
+            {/* card */}
+            <div className="relative bg-white rounded-[28px] md:rounded-[40px] p-6 sm:p-8 md:p-12 shadow-2xl">
+
+              <h3 className="font-semibold mb-4 md:mb-6 text-lg md:text-xl">
+                Core Advantages
+              </h3>
+
+              <ul className="space-y-3 md:space-y-4 text-slate-600 text-base md:text-lg">
+                <li>⚡ &nbsp;Product-Oriented Thinking</li>
+                <li>📊 &nbsp;Structured Frontend Architecture</li>
+                <li>🎯 &nbsp;Intentional UX Decisions</li>
+                <li>🧠 &nbsp;Performance & Practicality Focus</li>
+                <li>🤝 &nbsp;Clear Technical Communication</li>
               </ul>
+
             </div>
+
           </div>
         </motion.div>
       </section >
 
       {/* CONTACT */}
-      <section id="contact" className="text-center py-36 px-6" >
+      <section id="contact" className="text-center px-6 py-20 md:py-28" >
+        {/* <section id="contact" className="text-center py-36 px-6 py-20 md:py-28" > */}
+        {/* <section id="work" className="max-w-6xl mx-auto px-6 py-20 md:py-28"> */}
         <motion.div initial={{ scale: 0.95, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} transition={{ duration: 0.6 }} className="max-w-3xl mx-auto">
-          <h2 className="text-6xl font-semibold tracking-tight mb-8">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight mb-8">
             Let’s Build The Next
             <span className="bg-gradient-to-r from-pink-500 to-rose-400 bg-clip-text text-transparent"> Category-Defining Product</span>
           </h2>
@@ -445,7 +472,10 @@ bg-gradient-to-br from-pink-100/70 via-rose-100/60 to-pink-60/70" />
           </p>
 
           <Link href="mailto:verdiandesya@gmail.com" target="_blank">
-            <Button className="rounded-full bg-gradient-to-r from-pink-500 to-rose-400 text-white px-10 py-7 text-xl shadow-2xl hover:scale-105 transition">
+            <Button className="rounded-full bg-gradient-to-r from-pink-500 to-rose-400 text-white 
+px-8 md:px-12 py-4 md:py-6 
+text-base md:text-lg 
+shadow-xl hover:shadow-2xl hover:scale-[1.03] transition-all duration-300">
               Start a Conversation
             </Button>
           </Link>
@@ -457,7 +487,7 @@ bg-gradient-to-br from-pink-100/70 via-rose-100/60 to-pink-60/70" />
         {
           activeCase && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-6 z-50">
-              <motion.div initial={{ scale: 0.85, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.85, opacity: 0 }} className="bg-white max-w-3xl w-full rounded-[40px] p-12 relative shadow-2xl">
+              <motion.div initial={{ scale: 0.85, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.85, opacity: 0 }} className="bg-white max-w-3xl w-full rounded-[30px] md:rounded-[40px] p-6 md:p-12 relative shadow-2xl max-h-[90vh] overflow-y-auto">
                 <button onClick={() => setActiveCase(null)} className="absolute right-8 top-8 text-slate-400 hover:text-slate-700"><X size={28} /></button>
 
                 <h3 className="text-4xl font-semibold mb-2">{activeCase.title}</h3>
