@@ -528,9 +528,7 @@ flex flex-wrap items-center justify-center gap-1 md:gap-2
 text-xs md:text-sm">
 
         <span>© {new Date().getFullYear()} Verdian Dee </span>
-
         <span className="inline">•</span>
-
         <span className="flex items-center gap-1">
           Made with
           <Heart className="w-3 h-3 md:w-4 md:h-4 text-red-500 fill-red-500" />
