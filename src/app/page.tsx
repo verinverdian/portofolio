@@ -407,42 +407,61 @@ bg-gradient-to-br from-pink-100/70 via-rose-100/60 to-pink-60/70" />
 
       {/* ABOUT — AUTHORITY BUILDING */}
       <section id="about" className="max-w-6xl mx-auto px-6 py-20 md:py-28">
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.7 }} className="grid md:grid-cols-2 gap-20 items-center">
-          <div className="space-y-7">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-10 md:mb-20 tracking-tight">About</h2>
 
-            <p className="text-lg text-slate-600 leading-relaxed">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="grid md:grid-cols-2 gap-12 md:gap-20 items-center"
+        >
+
+          {/* TEXT */}
+          <div className="space-y-6 md:space-y-7 text-left">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+              About
+            </h2>
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto md:mx-0">
               I specialize in turning complex ideas into structured digital products.
             </p>
-
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto md:mx-0">
               My approach combines product thinking, analytical clarity, and scalable frontend engineering. I care about building systems that are intuitive for users and sustainable for teams.
             </p>
-
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto md:mx-0">
               Rather than focusing on isolated features, I aim to create cohesive experiences that align user needs with business goals.
             </p>
 
-            <div className="flex gap-4 pt-4">
-              <Link href="https://github.com/verinverdian" target="_blank"><Button variant="outline" className="rounded-full"><Github className="mr-2 h-4 w-4" />Github</Button></Link>
-              <Link href="https://www.linkedin.com/in/verdiandesya/" target="_blank"><Button variant="outline" className="rounded-full"><Linkedin className="mr-2 h-4 w-4" />LinkedIn</Button></Link>
-              <Link href="mailto:verdiandesya@gmail.com" target="_blank"><Button variant="outline" className="rounded-full"><Mail className="mr-2 h-4 w-4" />Email</Button></Link>
+            {/* BUTTONS */}
+            <div className="flex flex-wrap justify-start gap-1 md:gap-3 pt-4">
+              <Link href="https://github.com/verinverdian" target="_blank">
+                <Button variant="outline" className="rounded-full">
+                  <Github className="mr-2 h-4 w-4" />
+                  Github
+                </Button>
+              </Link>
+              <Link href="https://www.linkedin.com/in/verdiandesya/" target="_blank">
+                <Button variant="outline" className="rounded-full">
+                  <Linkedin className="mr-2 h-4 w-4" />
+                  LinkedIn
+                </Button>
+              </Link>
+              <Link href="mailto:verdiandesya@gmail.com" target="_blank">
+                <Button variant="outline" className="rounded-full">
+                  <Mail className="mr-2 h-4 w-4" />
+                  Email
+                </Button>
+              </Link>
             </div>
           </div>
 
-          {/* AUTHORITY CARD */}
-          <div className="relative w-full">
-
-            {/* glow background */}
+          {/* CARD */}
+          <div className="relative w-full max-w-md mx-auto md:mx-0">
+            {/* glow */}
             <div className="absolute inset-0 bg-pink-200 blur-2xl md:blur-3xl opacity-30 rounded-full" />
-
             {/* card */}
             <div className="relative bg-white rounded-[28px] md:rounded-[40px] p-6 sm:p-8 md:p-12 shadow-2xl">
-
-              <h3 className="font-semibold mb-4 md:mb-6 text-lg md:text-xl">
+              <h3 className="font-semibold mb-4 md:mb-6 text-lg md:text-xl text-left">
                 Core Advantages
               </h3>
-
               <ul className="space-y-3 md:space-y-4 text-slate-600 text-base md:text-lg">
                 <li>⚡ &nbsp;Product-Oriented Thinking</li>
                 <li>📊 &nbsp;Structured Frontend Architecture</li>
@@ -450,12 +469,10 @@ bg-gradient-to-br from-pink-100/70 via-rose-100/60 to-pink-60/70" />
                 <li>🧠 &nbsp;Performance & Practicality Focus</li>
                 <li>🤝 &nbsp;Clear Technical Communication</li>
               </ul>
-
             </div>
-
           </div>
         </motion.div>
-      </section >
+      </section>
 
       {/* CONTACT */}
       <section id="contact" className="text-center px-6 py-20 md:py-28" >
@@ -512,7 +529,7 @@ text-xs md:text-sm">
 
         <span>© {new Date().getFullYear()} Verdian Dee </span>
 
-        <span className="hidden sm:inline">•</span>
+        <span className="inline">•</span>
 
         <span className="flex items-center gap-1">
           Made with
@@ -520,14 +537,9 @@ text-xs md:text-sm">
           &
           <Coffee className="w-3 h-3 md:w-4 md:h-4 text-yellow-700" />
         </span>
-
-        <span className="hidden sm:inline">•</span>
-
+        <span className="inline">•</span>
         <span>Fueled by curiosity</span>
-
-
       </footer>
-
     </div >
   );
 }
