@@ -274,7 +274,7 @@ overflow-x-auto whitespace-nowrap">
       </section>
 
       {/* PREVIOUS WORK */}
-      <section id="work" className="max-w-6xl mx-auto px-6 py-20 md:py-28">
+      <section id="works" className="max-w-6xl mx-auto px-6 py-20 md:py-28">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-10 md:mb-20 tracking-tight">
           Previous Work
         </h2>
@@ -353,7 +353,7 @@ overflow-x-auto whitespace-nowrap">
       </section>
 
       {/* PROJECTS*/}
-      <section id="work" className="max-w-6xl mx-auto px-6 py-20 md:py-28">
+      <section id="projects" className="max-w-6xl mx-auto px-6 py-20 md:py-28">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-10 md:mb-20 tracking-tight">Projects</h2>
 
         <div className="space-y-14">
