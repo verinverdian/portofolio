@@ -274,9 +274,11 @@ overflow-x-auto whitespace-nowrap">
       </section>
 
       {/* PREVIOUS WORK */}
-      <section id="works" className="max-w-6xl mx-auto px-6 py-20 md:py-28">
+      <section id="work" className="max-w-6xl mx-auto px-6 py-20 md:py-28">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-10 md:mb-20 tracking-tight">
-          Previous Work
+          <span className="bg-pink-200/60 rounded-lg px-3 py-1">
+            Previous Work
+          </span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
@@ -354,7 +356,9 @@ overflow-x-auto whitespace-nowrap">
 
       {/* PROJECTS*/}
       <section id="projects" className="max-w-6xl mx-auto px-6 py-20 md:py-28">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-10 md:mb-20 tracking-tight">Projects</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-10 md:mb-20 tracking-tight">
+          <span className="bg-pink-200/60 rounded-lg px-3 py-1">Projects</span>
+        </h2>
 
         <div className="space-y-14">
           {caseStudies.map((study) => (
@@ -417,8 +421,8 @@ bg-gradient-to-br from-pink-100/70 via-rose-100/60 to-pink-60/70" />
 
           {/* TEXT */}
           <div className="space-y-6 md:space-y-7 text-left">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-              About
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-10 md:mb-20 tracking-tight">
+              <span className="bg-pink-200/60 rounded-lg px-3 py-1">About</span>
             </h2>
             <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto md:mx-0">
               I specialize in turning complex ideas into structured digital products.
