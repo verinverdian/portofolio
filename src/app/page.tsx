@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Github, Linkedin, ArrowUpRight, X, Heart, Coffee, ChevronDown } from "lucide-react";
+import { Mail, Github, Linkedin, ArrowUpRight, X, Heart, Coffee, ChevronDown, Sun, Moon } from "lucide-react";
 
 export default function UltraPremiumPortfolio() {
   type CaseStudy = {
@@ -26,6 +26,8 @@ export default function UltraPremiumPortfolio() {
   const [activeCase, setActiveCase] = useState<CaseStudy | null>(null)
 
   const [active, setActive] = useState<Section | null>(null)
+
+  const [darkMode, setDarkMode] = useState(false)
 
   const prevWorks = [
     {
@@ -119,7 +121,7 @@ export default function UltraPremiumPortfolio() {
       }
       className={`transition-colors duration-300 ${active === id
         ? "text-pink-600"
-        : "text-slate-700 hover:text-pink-500"
+        : "text-text hover:text-pink-500"
         }`}
     >
       {label}
@@ -154,11 +156,46 @@ export default function UltraPremiumPortfolio() {
   }, [isInView])
 
   return (
-    <div className="min-h-screen bg-[#fffafd] text-slate-900 overflow-x-hidden selection:bg-pink-200">
+    <div
+      className={`min-h-screen overflow-x-hidden selection:bg-pink-200 transition-colors duration-500 ${darkMode
+        ? "bg-[#0b0b0f] text-white"
+        : "bg-[#fffafd] text-slate-900"
+        }`}
+    >
+
       {/* BACKGROUND */}
-      <div className="fixed inset-0 -z-10">
-        <div className="absolute top-[-120px] left-[-120px] w-[420px] h-[420px] bg-pink-200 rounded-full blur-[140px] opacity-40" />
-        <div className="absolute bottom-[-150px] right-[-100px] w-[420px] h-[420px] bg-rose-200 rounded-full blur-[140px] opacity-40" />
+      <div className="fixed inset-0 -z-0 overflow-hidden">
+
+        {/* light mode glow */}
+        {!darkMode && (
+          <>
+            <div className="absolute top-[-120px] left-[-120px] w-[420px] h-[420px] bg-pink-200 rounded-full blur-[140px] opacity-40" />
+            <div className="absolute bottom-[-150px] right-[-100px] w-[420px] h-[420px] bg-rose-200 rounded-full blur-[140px] opacity-40" />
+          </>
+        )}
+
+        {/* dark mode animated glow */}
+        {darkMode && (
+          <>
+            <motion.div
+              animate={{ opacity: [0.3, 0.6, 0.3] }}
+              transition={{ duration: 6, repeat: Infinity }}
+              className="absolute top-[-150px] left-[-150px] w-[500px] h-[500px] bg-pink-500 rounded-full blur-[180px]"
+            />
+
+            <motion.div
+              animate={{ opacity: [0.2, 0.5, 0.2] }}
+              transition={{ duration: 8, repeat: Infinity }}
+              className="absolute bottom-[-150px] right-[-150px] w-[500px] h-[500px] bg-rose-500 rounded-full blur-[180px]"
+            />
+
+            <motion.div
+              animate={{ opacity: [0.15, 0.35, 0.15] }}
+              transition={{ duration: 10, repeat: Infinity }}
+              className="absolute top-[30%] left-[40%] w-[400px] h-[400px] bg-fuchsia-500 rounded-full blur-[200px]"
+            />
+          </>
+        )}
       </div>
 
       {/* FLOATING NAV */}
@@ -167,15 +204,29 @@ export default function UltraPremiumPortfolio() {
         animate={{ y: 0 }}
         className="fixed top-6 left-0 right-0 flex justify-center z-50"
       >
-        <div className="backdrop-blur-2xl bg-white/60 border border-white/40 shadow-xl rounded-full 
+        <div
+          className={`backdrop-blur-2xl shadow-xl rounded-full
 px-4 md:px-8 py-2 md:py-3 
 flex gap-4 md:gap-8 
 text-xs md:text-sm font-medium
-overflow-x-auto whitespace-nowrap">
+overflow-x-auto whitespace-nowrap
+${darkMode ? "bg-black/40 border border-white/10" : "bg-white/60 border border-white/40"}
+`}
+        >
           {navItem("work", "Work")}
           {navItem("projects", "Projects")}
           {navItem("about", "About")}
           {navItem("contact", "Contact")}
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition"
+          >
+            {darkMode ? (
+              <Sun size={18} className="text-pink-600" />
+            ) : (
+              <Moon size={18} className="text-text" />
+            )}
+          </button>
         </div>
       </motion.div>
 
@@ -205,7 +256,7 @@ overflow-x-auto whitespace-nowrap">
         >
 
           {/* STATUS */}
-          <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-[0.25em] text-slate-400">
+          <div className={`flex items-center justify-center gap-2 text-xs uppercase tracking-[0.25em] ${darkMode ? 'text-white' : 'text-slate-400'} `}>
             {/* <span className="h-2 w-2 rounded-full bg-emerald-500"></span> */}
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -215,15 +266,15 @@ overflow-x-auto whitespace-nowrap">
           </div>
 
           {/* HEADLINE */}
-          <h1 className="text-4xl sm:text-4xl sm:text-5xl md:text-7xl font-semibold leading-[1.15] tracking-tight text-slate-900">
+          <h1 className="text-4xl sm:text-4xl sm:text-5xl md:text-7xl font-semibold leading-[1.15] tracking-tight">
             I Think in{" "}
             <span className="relative inline-block">
-              <span className="absolute inset-0 bg-pink-200/60 rounded-lg -rotate-1"></span>
-              <span className="relative z-10 px-2">Product.</span>
+              <span className={`absolute inset-0 rounded-lg -rotate-1 ${darkMode ? 'bg-pink-200' : 'bg-pink-200/60'}`}></span>
+              <span className="relative z-10 px-2 text-black">Product</span>
             </span>
             <br />
-            <span className="relative inline-block">
-              <span className="absolute inset-0 bg-pink-200/60 rounded-lg rotate-1"></span>
+            <span className={`relative inline-block rounded-lg ${darkMode ? 'bg-pink-200' : 'bg-pink-200/60'}`}>
+              <span className="absolute inset-0 rotate-1"></span>
 
               <span className="relative z-10 px-2 bg-gradient-to-r from-pink-500 to-rose-400 bg-clip-text text-transparent">
                 {typedText}
@@ -233,13 +284,13 @@ overflow-x-auto whitespace-nowrap">
           </h1>
 
           {/* SUB-HEADLINE */}
-          <p className="max-w-3xl mx-auto text-lg md:text-xl text-slate-600 leading-relaxed">
+          <p className={`max-w-3xl mx-auto text-lg md:text-xl leading-relaxed ${darkMode ? 'text-white' : 'text-slate-600'} `}>
             From strategy to scalable frontend architecture,
             I turn complex ideas into intuitive digital products that perform.
           </p>
 
           {/* TRUST SIGNAL */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-slate-500 font-medium pt-2">
+          <div className={`flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm font-medium pt-2 ${darkMode ? 'text-white' : 'text-slate-500'} `}>
             <span>Product Strategy → UI → Production</span>
             <span>Scalable Frontend Systems</span>
             <span>Performance & UX Focused</span>
@@ -275,11 +326,16 @@ overflow-x-auto whitespace-nowrap">
 
       {/* PREVIOUS WORK */}
       <section id="work" className="max-w-6xl mx-auto px-6 py-20 md:py-28">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-10 md:mb-20 tracking-tight">
-          <span className="bg-pink-200/60 rounded-lg px-3 py-1">
-            Previous Work
-          </span>
-        </h2>
+        <div className="relative inline-block">
+          <h2 className="absolute -top-6 left-0 text-3xl sm:text-4xl md:text-5xl font-semibold -rotate-1 tracking-tight z-10">
+            <span
+              className={`inline-block rounded-xl px-4 py-2 text-black ${darkMode ? "bg-pink-200" : "bg-pink-200/60"
+                }`}
+            >
+              Work
+            </span>
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
           {prevWorks.map((work) => (
@@ -290,7 +346,7 @@ overflow-x-auto whitespace-nowrap">
               className="group"
             >
               <motion.div whileHover={{ y: -10 }}>
-                <Card className="rounded-[40px] border-0 shadow-lg hover:shadow-2xl transition overflow-hidden bg-white/80 backdrop-blur h-full cursor-pointer">
+                <Card className={`rounded-[40px] border-0 shadow-lg hover:shadow-2xl transition overflow-hidden backdrop-blur h-full cursor-pointer ${darkMode ? 'bg-white' : 'bg-white/80'}`}>
 
                   <CardContent className="p-6 md:p-12 flex flex-col gap-6 md:gap-8">
 
@@ -356,14 +412,22 @@ overflow-x-auto whitespace-nowrap">
 
       {/* PROJECTS*/}
       <section id="projects" className="max-w-6xl mx-auto px-6 py-20 md:py-28">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-10 md:mb-20 tracking-tight">
-          <span className="bg-pink-200/60 rounded-lg px-3 py-1">Projects</span>
-        </h2>
+
+        <div className="relative inline-block">
+          <h2 className="absolute -top-6 left-0 text-3xl sm:text-4xl md:text-5xl font-semibold -rotate-1 tracking-tight z-10">
+            <span
+              className={`inline-block rounded-xl px-4 py-2 text-black ${darkMode ? "bg-pink-200" : "bg-pink-200/60"
+                }`}
+            >
+              Projects
+            </span>
+          </h2>
+        </div>
 
         <div className="space-y-14">
           {caseStudies.map((study) => (
             <motion.div key={study.title} whileHover={{ y: -10 }} onClick={() => setActiveCase(study)} className="cursor-pointer group">
-              <Card className="rounded-[40px] border-0 shadow-lg hover:shadow-2xl transition overflow-hidden bg-white/80 backdrop-blur">
+              <Card className={`rounded-[40px] border-0 shadow-lg hover:shadow-2xl transition overflow-hidden backdrop-blur ${darkMode ? 'bg-white' : 'bg-white/80'}`}>
                 <CardContent className="p-6 md:p-12 flex flex-col md:flex-row gap-6 md:gap-8">
                   {/* PREMIUM PREVIEW */}
                   <div className="w-full md:w-1/2 h-44 md:h-56 rounded-3xl relative overflow-hidden">
@@ -421,21 +485,30 @@ bg-gradient-to-br from-pink-100/70 via-rose-100/60 to-pink-60/70" />
 
           {/* TEXT */}
           <div className="space-y-6 md:space-y-7 text-left">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-10 md:mb-20 tracking-tight">
-              <span className="bg-pink-200/60 rounded-lg px-3 py-1">About</span>
-            </h2>
-            <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto md:mx-0">
-              I specialize in turning complex ideas into structured digital products.
-            </p>
-            <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto md:mx-0">
-              My approach combines product thinking, analytical clarity, and scalable frontend engineering. I care about building systems that are intuitive for users and sustainable for teams.
-            </p>
-            <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto md:mx-0">
-              Rather than focusing on isolated features, I aim to create cohesive experiences that align user needs with business goals.
-            </p>
+            <div className="relative inline-block">
+              <h2 className="absolute -top-8 left-0 text-3xl sm:text-4xl md:text-5xl font-semibold -rotate-1 tracking-tight z-10">
+                <span
+                  className={`inline-block rounded-xl px-4 py-2 text-black ${darkMode ? "bg-pink-200" : "bg-pink-200/60"
+                    }`}
+                >
+                  About
+                </span>
+              </h2>
+            </div>
+            <div className={`${darkMode ? 'text-white' : 'text-slate-600'}`}>
+              <p className="text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+                I specialize in turning complex ideas into structured digital products.
+              </p>
+              <p className="text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+                My approach combines product thinking, analytical clarity, and scalable frontend engineering. I care about building systems that are intuitive for users and sustainable for teams.
+              </p>
+              <p className="text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+                Rather than focusing on isolated features, I aim to create cohesive experiences that align user needs with business goals.
+              </p>
+            </div>
 
             {/* BUTTONS */}
-            <div className="flex flex-wrap justify-start gap-1 md:gap-3 pt-4">
+            <div className={`flex flex-wrap justify-start gap-1 md:gap-3 pt-4 ${darkMode ? 'text-black' : 'text-slate-600'}`}>
               <Link href="https://github.com/verinverdian" target="_blank">
                 <Button variant="outline" className="rounded-full">
                   <Github className="mr-2 h-4 w-4" />
@@ -462,11 +535,11 @@ bg-gradient-to-br from-pink-100/70 via-rose-100/60 to-pink-60/70" />
             {/* glow */}
             <div className="absolute inset-0 bg-pink-200 blur-2xl md:blur-3xl opacity-30 rounded-full" />
             {/* card */}
-            <div className="relative bg-white rounded-[28px] md:rounded-[40px] p-6 sm:p-8 md:p-12 shadow-2xl">
+            <div className={`relative bg-white rounded-[28px] md:rounded-[40px] p-6 sm:p-8 md:p-12 shadow-2xl ${darkMode ? 'text-slate-700' : 'text-slate-600'}`}>
               <h3 className="font-semibold mb-4 md:mb-6 text-lg md:text-xl text-left">
                 Core Advantages
               </h3>
-              <ul className="space-y-3 md:space-y-4 text-slate-600 text-base md:text-lg">
+              <ul className="space-y-3 md:space-y-4 text-base md:text-lg">
                 <li>⚡ &nbsp;Product-Oriented Thinking</li>
                 <li>📊 &nbsp;Structured Frontend Architecture</li>
                 <li>🎯 &nbsp;Intentional UX Decisions</li>
@@ -488,7 +561,7 @@ bg-gradient-to-br from-pink-100/70 via-rose-100/60 to-pink-60/70" />
             <span className="bg-gradient-to-r from-pink-500 to-rose-400 bg-clip-text text-transparent"> Category-Defining Product</span>
           </h2>
 
-          <p className="text-xl text-slate-600 mb-10">
+          <p className={`text-xl mb-10 ${darkMode ? 'text-white' : 'text-slate-600'}`}>
             Currently open to high-impact roles in digital transformation, product-driven organizations, and ambitious technology teams.
           </p>
 
@@ -527,9 +600,9 @@ shadow-xl hover:shadow-2xl hover:scale-[1.03] transition-all duration-300">
       </AnimatePresence >
 
       {/* FOOTER */}
-      <footer className="py-8 md:py-12 text-center text-slate-500 
+      <footer className={`py-8 md:py-12 text-center 
 flex flex-wrap items-center justify-center gap-1 md:gap-2
-text-xs md:text-sm">
+text-xs md:text-sm ${darkMode ? 'text-white' : 'text-slate-500'} `}>
 
         <span>© {new Date().getFullYear()} Verdian Dee </span>
         <span className="inline">•</span>
