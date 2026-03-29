@@ -164,7 +164,7 @@ export default function UltraPremiumPortfolio() {
     >
 
       {/* BACKGROUND */}
-      <div className="fixed inset-0 -z-0 overflow-hidden">
+      <div className="fixed inset-0 -z-0 overflow-hidden pointer-events-none">
 
         {/* light mode glow */}
         {!darkMode && (
